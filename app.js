@@ -39,6 +39,7 @@ let autoCheese = 0
 
 
 
+
 // CLICKING THE MOON, MINING
 // This ONLY deals with the user clicking 
 function mineCheese() {
@@ -47,9 +48,30 @@ function mineCheese() {
     mineWDrill()
     mineWAstro()
     mineWRover()
+    updateVals()
+
     let totalCheeseElem = document.getElementById('totalCheese')
     totalCheeseElem.innerHTML = cheese.toString()
 }
+
+function calcClickVals(clickUps) {
+    return clickUps.reduce((totalPoints, upgrades) => totalPoints + (upgrades.quantity * upgrades.modifier), 0)
+    console.log('Value of all click upgrades purchased', calcClickVals);
+}
+function calcAutoVals(autoUps) {
+    return autoUps.reduce((totalPoints, upgrades) => totalPoints + (upgrades.quantity * upgrades.modifier), 0)
+    console.log('Value of all auto upgrades purchased', calcAutoVals)
+}
+
+function updateVals() {
+    let totalClicksValues = calcClickVals(clickUps)
+    let totalAutosValues = calcAutoVals(autoUps)
+    let totalClicksPointsElem = document.getElementById('totalPerClick')
+    totalClicksPointsElem.innerHTML = totalClicksValues.toString()
+    let totalAutosPointsElem = document.getElementById('totalPerInterval')
+    totalAutosPointsElem.innerHTML = totalAutosValues.toString()
+}
+
 
 // BUY PICKAXE
 function addAxe() {
@@ -61,12 +83,18 @@ function addAxe() {
         cheese = cheese - axe.price
         axe.quantity++
         totalAxesElem.innerHTML = axe.quantity.toString()
+        // increase axe price
+        axe.price += 10
+        console.log('new axe price', axe.price)
+        let newAxePriceElem = document.getElementById('newAxePrice')
+        newAxePriceElem.innerHTML = axe.price.toString()
     }
     // update axePoints to DOM
     clickUps.find(axe => axe.name == 'pickaxe')
     let axesPoints = axe.quantity * axe.modifier
     let totalAxesPointsElem = document.getElementById('totalAxesPoints')
     totalAxesPointsElem.innerHTML = axesPoints.toString()
+    updateVals()
 }
 
 // BUY DRILL
@@ -79,12 +107,18 @@ function addDrill() {
         cheese = cheese - drill.price
         drill.quantity++
         totalDrillsElem.innerHTML = drill.quantity.toString()
+        // increase drill price
+        drill.price += 20
+        console.log('new drill price', drill.price)
+        let newDrillPriceElem = document.getElementById('newDrillPrice')
+        newDrillPriceElem.innerHTML = drill.price.toString()
     }
     // update axePoints to DOM
     clickUps.find(drill => drill.name == 'drill')
     let drillsPoints = drill.quantity * drill.modifier
     let totalDrillsPointsElem = document.getElementById('totalDrillsPoints')
     totalDrillsPointsElem.innerHTML = drillsPoints.toString()
+    updateVals()
 }
 
 // CALCULATE AXE POINTS/CHEESE
@@ -96,6 +130,8 @@ function mineWAxe() {
     cheese = clickCheese + cheese
     let totalCheeseElem = document.getElementById('totalCheese');
     totalCheeseElem.innerHTML = cheese.toString();
+    let totalAxesPointsElem = document.getElementById('totalAxesPoints')
+    totalAxesPointsElem.innerHTML = axePoints.toString()
 }
 
 function mineWDrill() {
@@ -109,7 +145,6 @@ function mineWDrill() {
     // update drillPoints to DOM
     let totalDrillsPointsElem = document.getElementById('totalDrillsPoints')
     totalDrillsPointsElem.innerHTML = drillPoints.toString()
-
 }
 
 
@@ -124,12 +159,18 @@ function addAstro() {
         cheese = cheese - astro.price
         astro.quantity++
         totalAstrosElem.innerHTML = astro.quantity.toString()
+        // increase astro price
+        astro.price += 40
+        console.log('new astro price', astro.price)
+        let newAstroPriceElem = document.getElementById('newAstroPrice')
+        newAstroPriceElem.innerHTML = astro.price.toString()
     }
     // update axePoints to DOM
     autoUps.find(astro => astro.name == 'astronaut')
     let astrosPoints = astro.quantity * astro.modifier
     let totalAstrosPointsElem = document.getElementById('totalAstrosPoints')
     totalAstrosPointsElem.innerHTML = astrosPoints.toString()
+    updateVals()
 }
 
 // ADD/BUY ROVER FOR AUTO UPGRADES POINTS
@@ -142,12 +183,18 @@ function addRover() {
         cheese = cheese - rover.price
         rover.quantity++
         totalRoversElem.innerHTML = rover.quantity.toString()
+        // increase rover price
+        rover.price += 120
+        console.log('new rover price', rover.price)
+        let newRoverPriceElem = document.getElementById('newRoverPrice')
+        newRoverPriceElem.innerHTML = rover.price.toString()
     }
     // update axePoints to DOM
     autoUps.find(rover => rover.name == 'rover')
     let roversPoints = rover.quantity * rover.modifier
     let totalRoversPointsElem = document.getElementById('totalRoversPoints')
     totalRoversPointsElem.innerHTML = roversPoints.toString()
+    updateVals()
 }
 
 

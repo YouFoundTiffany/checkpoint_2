@@ -35,122 +35,135 @@
     }
 </style>
 
-<body class="bg-galaxy container-fluid text-center font-audio">
-
-    <!-- Header -->
-    <header class="row text-center justify-content-center">
-        <div class="col-7 p-4 gameName">
-            <h1 class="fw-bold">🌌🌌Bubble Galaxy🌌🌌</h1>
-        </div>
-    </header>
+<body class="font-prussian-blue bg-galaxy container-fluid text-center font-audio">
+    <div class="p-2">
 
 
-    <!-- Main -->
-    <main class="row justify-content-center">
-        <!-- MOON BUTTON -->
-        <audio id="pop" preload="auto">
-            <source src="bubble-sound-43207.mp3" type="audio/mpeg">
-        </audio>
-        <div class="col-12 bubbleCard ">
-            <div class="row justify-content-center">
-                <button class="fw-bold" onclick="mineCheese()" id="popSound"><img src="bubble-galaxy.gif"
-                        alt="bubble-galaxy" class="btn-bubble bubble"></button>
+        <!-- Header -->
+        <header class="row text-center justify-content-center m-0">
+            <div class="col-7 p-1 gameName">
+                <h1 class="fw-bold">🌌🌌Bubble Galaxy🌌🌌</h1>
             </div>
-        </div>
+        </header>
 
-        <!-- LEFT SIDE    SCORES AND CLICKS -->
-        <div class="row col-12 text-center">
-            <div class="col-4 p-2 gameName">
-                <h4 class="fw-bold">clickUps: <span id="">0</span></h4>
-            </div>
-            <div class="col-4 p-2 gameName">
-                <h2 class="fw-bold">CHEESE: <span id="totalCheese">0</span></h2>
-            </div>
-            <div class="col-4 p-2 gameName">
-                <h4 class="fw-bold">auto clicks <span id="">0</span></h4>
-            </div>
-        </div>
 
-        <!-- Game Layout -->
-        <div class="row col-12 text-center">
-            <!-- UPGRADES Left Side -->
-            <div class="col-6 gameName">
-                <h2 class="fw-bold">Get More Cheese!</h2>
-                <div class="row">
-                    <div class="col-6 gameName">
-                        <h4 class="fw-bold">Per Click</h4>
-                        <div class="col-12">
-                            <div class="col-12 gameName">
-                                <button class="btn btn-warning fw-bold" onclick="addAxe()">GET PICKAXE</button>
+        <!-- Main -->
+        <main class="row justify-content-center border-ultra-violet m-0">
+            <!-- BUBBLE  AREA-->
+            <audio id="pop" preload="auto">
+                <source src="bubble-sound-43207.mp3" type="audio/mpeg">
+            </audio>
+            <!-- BUBBLE  DIV -->
+            <div class="bubbleCard ">
+                <div class="row justify-content-center">
+                    <div class="" onclick="mineCheese()" id="popSound"><img src="bubble-galaxy.gif" alt="bubble-galaxy"
+                            class="btn-bubble bubble"></div>
+                </div>
+            </div>
+
+            <!-- LEFT SIDE    BUYING UPGRADES -->
+            <div class="row col-12 text-center border-ultra-violet-top-bottom">
+                <div
+                    class="col-12 col-md-4 p-2 gameName d-flex align-items-center justify-content-center border-ultra-violet-right">
+                    <h6 class="fw-bold m-0 d-flex align-items-center justify-content-center">Total Per Click: <span
+                            id="totalPerClick">0</span>
+                    </h6>
+                </div>
+                <div class="col-12 col-md-4 p-2 gameName border-ultra-violet-left-right">
+                    <h4 class="fw-bold m-0 d-flex align-items-center justify-content-center">STARDUST: <span
+                            id="totalCheese">0</span></h4>
+                </div>
+                <div
+                    class="col-12 col-md-4 p-2 gameName d-flex align-items-center justify-content-center border-ultra-violet-left">
+                    <h6 class="fw-bold m-0 d-flex align-items-center justify-content-center">Total Per Astro Day: <span
+                            id="totalPerInterval">0</span></h6>
+                </div>
+            </div>
+
+            <!-- Game Layout -->
+            <div class="row col-12 text-center px-0">
+                <!-- UPGRADES Left Side -->
+                <div class="col-12 col-md-6 gameName border-ultra-violet-right">
+                    <h6 class="fw-bold p-2 m-0">Get More Stardust!</h6>
+                    <div class="row">
+                        <div class="col-12 col-md-6 gameName border-ultra-violet-right border-ultra-violet-top">
+                            <h6 class="fw-bold">Celestial Helpers Per Click</h6>
+                            <div class="col-12">
+                                <div class="col-12 gameName p-1">
+                                    <button class="btn btn-warning fw-bold font-prussian-blue btn-smTxt"
+                                        onclick="addAxe()">STAR SNAPPERS <span id="newAxePrice"> 50</span></button>
+                                </div>
+                                <div class="col-12 gameName p-1">
+                                    <button class="btn btn-warning fw-bold font-prussian-blue btn-smTxt"
+                                        onclick="addDrill()">GALACTIC BLOWERS <span
+                                            id="newDrillPrice">100</span></button>
+                                </div>
                             </div>
-                            <div class="col-12 gameName">
-                                <button class="btn btn-warning fw-bold" onclick="addDrill()">GET DRILL</button>
+
+                        </div>
+                        <div class="col-12 col-md-6 gameName border-ultra-violet-left border-ultra-violet-top">
+                            <h6 class="fw-bold">Astro Machines Per Astro Day</h6>
+                            <div class="col-12 gameName p-1">
+                                <button class="btn btn-warning fw-bold font-prussian-blue btn-smTxt"
+                                    onclick="addAstro()">COMET CRACKER <span id="newAstroPrice">200</span></button>
+                            </div>
+                            <div class="col-12 gameName p-1">
+                                <button class="btn btn-warning fw-bold font-prussian-blue btn-smTxt"
+                                    onclick="addRover()">NEBULA BLASTER <span id="newRoverPrice">600</span></button>
                             </div>
                         </div>
-
                     </div>
-                    <div class="col-6 gameName">
-                        <h4 class="fw-bold">Per Astro Day</h4>
-                        <div class="col-12 gameName">
-                            <button class="btn btn-warning fw-bold" onclick="addAstro()">GET ASTRONAUT</button>
+                </div>
+
+                <!-- RIGHT SIDE   STATS -->
+                <div class="col-12 col-md-6 gameName border-ultra-violet-left">
+                    <h6 class="fw-bold p-2 m-0">Stats</h6>
+                    <div class="row">
+                        <div class="col-12 col-md-6 p-1 gameName border-ultra-violet-right border-ultra-violet-top">
+                            <h6 class="fw-bold border-ultra-violet-bottom">Click Stats</h6>
+                            <div class="col-12">
+                                <div class="col-12 gameName border-ultra-violet-bottom">
+                                    <h6 class="fw-bold">Star Snappers: <span id="totalAxes">0</span></h6>
+
+                                    <h6 class="fw-bold">Per Click: <span id="totalAxesPoints">0</span></h6>
+
+                                </div>
+                                <div class="col-12 gameName">
+                                    <h6 class="fw-bold">Galactic Blowers: <span id="totalDrills">0</span></h6>
+
+                                    <h6 class="fw-bold">Per Click: <span id="totalDrillsPoints">0</span></h6>
+
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="col-12 gameName">
-                            <button class="btn btn-warning fw-bold" onclick="addRover()"> GET ROVER</button>
+                        <div class="col-12 col-md-6 p-1 gameName border-ultra-violet-left border-ultra-violet-top">
+                            <h6 class="fw-bold border-ultra-violet-bottom">Astro Day Stats</h6>
+                            <div class="col-12">
+                                <div class="col-12 border-ultra-violet-bottom">
+                                    <h6 class="fw-bold">Comet Cracker: <span id="totalAstros">0</span></h6>
+
+                                    <h6 class="fw-bold">Per Day: <span id="totalAstrosPoints">0</span></h6>
+
+                                </div>
+                                <div class="col-12">
+                                    <h6 class="fw-bold">Nebula Blaster: <span id="totalRovers">0</span></h6>
+
+                                    <h6 class="fw-bold">Per Day : <span id="totalRoversPoints">0</span></4>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- RIGHT SIDE   STATS -->
-            <div class="col-6 gameName">
-                <h2 class="fw-bold">Stats</h2>
-                <div class="row">
-                    <div class="col-6 gameName">
-                        <h4 class="fw-bold">Click Stats</h4>
-                        <div class="col-12">
-                            <div class="col-12 gameName">
-                                <h4 class="fw-bold">Axes: <span id="totalAxes">0</span></h4>
-
-                                <h4 class="fw-bold">Per Click: <span id="totalAxesPoints">0</span></h4>
-
-                            </div>
-                            <div class="col-12 gameName">
-                                <h4 class="fw-bold">Drills: <span id="totalDrills">0</span></h4>
-
-                                <h4 class="fw-bold">Per Click: <span id="totalDrillsPoints">0</span></h4>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-6 gameName">
-                        <h4 class="fw-bold">Astro Day Stats</h4>
-                        <div class="col-12">
-                            <div class="col-12">
-                                <h4 class="fw-bold">Astronauts: <span id="totalAstros">0</span></h4>
-
-                                <h4 class="fw-bold">Per Day: <span id="totalAstrosPoints">0</span></h4>
-
-                            </div>
-                            <div class="col-12">
-                                <h4 class="fw-bold">Rovers: <span id="totalRovers">0</span></h4>
-
-                                <h4 class="fw-bold">Per Day : <span id="totalRoversPoints">0</span></4>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="col-6 p-2 justify-content-start">
-            <button class="btn btn-warning fw-bold" onclick="resetGame()"> RESET</button>
-
-        </div>
-
+    </div>
+    <div class="col-12 col-md-6 p-1 justify-content-start">
+        <button class="btn btn-warning fw-bold font-prussian-blue btn-smTxt" onclick="resetGame()"> RESET</button>
+    </div>
     </main>
-
+    <div class="p-2"></div>
+    </div>
     <script src="app.js"></script>
 </body>
 

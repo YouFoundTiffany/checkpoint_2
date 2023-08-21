@@ -11,28 +11,25 @@
 .bg-galaxy {
     background-image: url('tumblr_m0wha6UXMO1qb9ckeo1_1280.jpg');
     background-repeat: no-repeat;
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
+    background-attachment: fixed;
     background-size: cover;
 }
 
+/* .row {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+} */
+
 .bubbleCard {
-    height: 55vh;
+    height: 52vh;
 }
 
-.invisibleButton {
-    height: 0;
-    width: 0;
-    border: none;
-    background-color: none;
-    padding: 0;
-
-}
 
 .btn-bubble {
     height: 300px;
     width: 300px;
+    cursor: crosshair;
 }
 
 .gameName {
@@ -51,6 +48,24 @@
     z-index: -1;
 }
 
+.xtraspace {
+    height: 15px;
+}
+
+.btn-smTxt {
+    font-size: small;
+}
+
+/* .cheese-border { broke the blur, gameName class
+    border-radius: solid;
+    border-left: var(--ultra-violet);
+    border-right: var(--ultra-violet);
+    border-top: none;
+    border-bottom: none;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 6px;
+} */
 
 /* UTILITY CLASSES */
 .font-orb {
@@ -103,6 +118,79 @@
 
 .blurFilter {
     backdrop-filter: blur(10px) saturate(70%);
+}
+
+.border-ultra-violet {
+    border: var(--ultra-violet);
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 6px;
+}
+
+.border-ultra-violet-right {
+    border-right-color: var(--ultra-violet);
+    border-right-style: solid;
+    /* border-radius: 20px; */
+    border-right-width: 3px;
+}
+
+.border-ultra-violet-left {
+    border-left-color: var(--ultra-violet);
+    border-left-style: solid;
+    /* border-radius: 20px; */
+    border-left-width: 3px;
+}
+
+.border-ultra-violet-left-right {
+    border-left-color: var(--ultra-violet);
+    border-left-style: solid;
+    /* border-radius: 20px; */
+    border-left-width: 3px;
+    border-right-color: var(--ultra-violet);
+    border-right-style: solid;
+    /* border-radius: 20px; */
+    border-right-width: 3px;
+}
+
+.border-ultra-violet-top-bottom {
+    border-top-color: var(--ultra-violet);
+    border-top-style: solid;
+    border-bottom-color: var(--ultra-violet);
+    border-bottom-style: solid;
+    /* border-radius: 20px; */
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+}
+
+.border-ultra-violet-top {
+    border-top-color: var(--ultra-violet);
+    border-top-style: solid;
+    /* border-radius: 20px; */
+    border-top-width: 6px;
+}
+
+.border-ultra-violet-bottom {
+    border-bottom-color: var(--ultra-violet);
+    border-bottom-style: solid;
+    /* border-radius: 20px; */
+    border-bottom-width: 6px;
+}
+
+
+.border-prussian-blue {
+    border: var(--prussian-blue);
+}
+
+.border-ultra-violet-2 {
+    border: var(--ultra-violet-2);
+}
+
+.border-honolulu-blue {
+    border: var(--honolulu-blue);
+}
+
+.border-uindigo-dye {
+    border: var(--indigo-dye);
 }
 
 
@@ -179,7 +267,7 @@
 
 /* COLOR SCHEME */
 
-CSS HSL */
+/*CSS HSL */
 /* --ultra-violet: hsla(246, 22%, 42%, 1);
 --prussian-blue: hsla(210, 68%, 20%, 1);
 --ultra-violet-2: hsla(232, 22%, 46%, 1);
